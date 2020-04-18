@@ -1,5 +1,10 @@
 import React, { memo, FC } from 'react'
 import { css } from '@emotion/core'
+import { AppContainers } from '@/constants'
+
+const data: Types.Hello = {
+  world: 'WORLD'
+}
 
 const home = css({
   fontSize: 20,
@@ -9,7 +14,9 @@ const home = css({
 
 const Home: FC = () => {
   return (
-    <div css={home}>Home Page</div>
+    <div css={home}>
+      {AppContainers.HOME} {data.world}
+    </div>
   )
 }
 

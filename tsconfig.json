@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "noImplicitAny": true,
+    "allowJs": false,
+    "importHelpers": true,
+    "paths": {
+      "@/*": [ "./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "lib": []
+}

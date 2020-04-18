@@ -44,7 +44,6 @@ const config = (env = {}) => {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].[hash:6].js',
-      // publicPath: '/assets/',
     },
   
     resolve: {
@@ -93,7 +92,32 @@ const config = (env = {}) => {
           ]
         },
         {
-          test: /\.(png|jpg|svg|gif)$/,
+          test: /\.less/,
+          use: [
+            {
+              loader: 'style-loader',
+              options: {
+              }
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                camelCase: true,
+                localsConvention: 'camelCaseOnly',
+                localIdentName: isProduction ? '[hash:5]' : '[local]'
+              }
+            },
+            {
+              loader: 'less-loader',
+              options: {
+                sourceMap: false
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(png|jpe?g|gif|woff2?|ttf|svg|eot)$/,
           include: [
             path.resolve(__dirname, 'src')
           ],
@@ -101,23 +125,22 @@ const config = (env = {}) => {
             {
               loader: 'url-loader',
               options: {
-                name: '[name][hash:6].[ext]',
+                name: 'assets/[name][hash:6].[ext]',
                 limit: 8192,
               }
             }
           ]
         },
         {
-          test: /\.(mp3)$/,
+          test: /\.(mp3|mp4)$/,
           include: [
             path.resolve(__dirname, 'src')
           ],
           use: [
             {
-              // loader: 'file-loader',
               loader: 'url-loader',
               options: {
-                name: '[name][hash:6].[ext]',
+                name: 'media/[name][hash:6].[ext]',
                 limit: 8192,
               }
             }
