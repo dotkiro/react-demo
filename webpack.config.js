@@ -148,7 +148,7 @@ const config = (env = {}) => {
       new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/^runtime/]),
       new webpack.BannerPlugin('All Rights Reserved'),
       new BundleAnalyzer.BundleAnalyzerPlugin({
-        analyzerMode: isProduction ? 'server' : 'disabled'
+        analyzerMode: isProduction ? 'static' : 'disabled'
       })
     ],
 
