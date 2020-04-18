@@ -103,9 +103,7 @@ const config = (env = {}) => {
               loader: 'css-loader',
               options: {
                 modules: true,
-                camelCase: true,
                 localsConvention: 'camelCaseOnly',
-                localIdentName: isProduction ? '[hash:5]' : '[local]'
               }
             },
             {
