@@ -15,6 +15,7 @@ React demo
 11. lint-staged v10
 12. husky v4
 13. Circle CI v2.1
+14. Less v3.11
 
 ## Get project
 

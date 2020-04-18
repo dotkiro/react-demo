@@ -51,6 +51,8 @@
     "eslint-plugin-react": "^7.19.0",
     "html-webpack-plugin": "^4.2.0",
     "husky": "^4.2.5",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
     "lint-staged": "^10.1.4",
     "react-dev-utils": "^10.2.1",
     "style-loader": "^1.1.4",
